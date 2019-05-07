@@ -16,16 +16,12 @@ function shoppingList(){
             </div>
         </li>`);
     });
-    $('.shopping-item-delete').click(function(event){
-        event.preventDefault();
-        $(this).closest('li').remove();
+    
+    $( ".shopping-list" ).on( "click", ".shopping-item-delete", function() {
+            $(this).closest('li').remove();
     });
-    $('.shopping-item-toggle').click(function(event){
-        event.preventDefault();
-        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');         
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(){
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
     });
-
 }
-
-
 $(shoppingList);
